@@ -85,7 +85,56 @@ maxExpenseValue();
 // cadastrar, 
 // ver resumo, 
 // limpar despesas 
-// sair.
+// e sair.
+let option;
+
+do {
+    option = Number(prompt(`
+    Escolha uma opção:
+    1. Cadastrar despesa
+    2. Ver resumo
+    3. Limpar despesas
+    4. Sair
+    `));
+
+    switch (option) {
+        case 1:
+            // Cadastrar despesa
+            let category = prompt("Digite a categoria da despesa:");
+            let value = Number(prompt("Digite o valor da despesa:"));
+
+            while (value < 0) {
+                value = Number(prompt("Valor inválido! Digite um valor positivo para a despesa:"));
+            }
+
+            expenseRegister(category, value);
+            break;
+
+        case 2:
+            // Ver resumo
+            showExpenses();
+            totalExpenses();
+            averageExpense();
+            maxExpenseValue();
+            break;
+
+        case 3:
+            // Limpar despesas
+            expenses = [];
+            console.log("Despesas limpas com sucesso!");
+            break;
+
+        case 4:
+            // Sair
+            console.log("Saindo...");
+            break;
+
+        default:
+            console.log("Opção inválida! Tente novamente.");
+            break;
+    }
+
+} while (option !== 4)
 
 // Calculadora de Despesas Pessoais
 
