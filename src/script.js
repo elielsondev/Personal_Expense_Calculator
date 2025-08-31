@@ -9,10 +9,12 @@ console.log("Script loaded successfully!");
 let category = prompt("Digite a categoria da despesa:");
 let value = Number(prompt("Digite o valor da despesa:"));
 
+
 // • Não permitir valores negativos.
 while (value < 0) {
     value = Number(prompt("Valor inválido! Digite um valor positivo para a despesa:"));
 }
+
 
 // • Armazenar todas as despesas em uma matriz.
 const expenses = [];
@@ -29,21 +31,61 @@ expenseRegister(category, value);
 // • Lista de todas as despesas cadastradas.
 function showExpenses() {
     console.log("Lista de todas as despesas cadastradas:");
+    
     for (let i = 0; i < expenses.length; i++) {
         console.log(`${i + 1}. Categoria: ${expenses[i][0]}, Valor: R$${expenses[i][1].toFixed(2).replace('.', ',')}`);
     };
-    // expenses.forEach((expense, index) => {
-    //     console.log(`${index + 1}. Categoria: ${expense[0]}, Valor: R$${expense[1].toFixed(2).replace('.', ',')}`);
-    // });
 };
 
 showExpenses();
 
+
 // • Valor total gasto.
+function totalExpenses() {
+    let totalValue = 0;
+
+    for (let i = 0; i < expenses.length; i++) {
+        totalValue += expenses[i][1];
+    };
+
+    console.log(`Valor total gasto: R$${totalValue.toFixed(2).replace('.', ', ')}`);
+};
+
+totalExpenses();
+
+
 // • Valor médio das despesas.
+function averageExpense() {
+    let totalValue = 0;
+
+    for (let i = 0; i < expenses.length; i++) {
+        totalValue += expenses[i][1];
+    }
+    let averageValue = totalValue / expenses.length;
+    
+    console.log(`Valor médio das despesas: R$${averageValue.toFixed(2).replace('.', ', ')}`);
+};
+
+
 // • Maior despesa cadastrada.
-// • Disponibilizar um menu interativo (via prompt)
-// com opções para cadastrar, ver resumo, limpar despesas e sair.
+let maxExpense = 0;
+function maxExpenseValue() {
+    for (let i = 0; i < expenses.length; i++) {
+        if (expenses[i][1] > maxExpense) {
+            maxExpense = expenses[i][1];
+        }
+    };
+    console.log(`Maior despesa cadastrada: R$${maxExpense.toFixed(2).replace('.', ', ')}`);
+};
+
+maxExpenseValue();
+
+
+// • Disponibilizar um menu interativo (via prompt) com opções para: 
+// cadastrar, 
+// ver resumo, 
+// limpar despesas 
+// sair.
 
 // Calculadora de Despesas Pessoais
 
