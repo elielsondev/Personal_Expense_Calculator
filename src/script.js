@@ -48,7 +48,7 @@ function totalExpenses() {
         totalValue += expenses[i][1];
     };
 
-    console.log(`Valor total gasto: R$${totalValue.toFixed(2).replace('.', ', ')}`);
+    console.log(`Valor total gasto: R$${totalValue.toFixed(2).replace('.', ',')}`);
 };
 
 totalExpenses();
@@ -61,9 +61,10 @@ function averageExpense() {
     for (let i = 0; i < expenses.length; i += 1) {
         totalValue += expenses[i][1];
     }
-    let averageValue = totalValue / expenses.length;
+
+    let averageValue = totalValue / expenses.length || 0; // Evitar divisão por zero
     
-    console.log(`Valor médio das despesas: R$${averageValue.toFixed(2).replace('.', ', ')}`);
+    console.log(`Valor médio das despesas: R$${averageValue.toFixed(2).replace('.', ',')}`);
 };
 
 
@@ -75,7 +76,7 @@ function maxExpenseValue() {
             maxExpense = expenses[i][1];
         }
     };
-    console.log(`Maior despesa cadastrada: R$${maxExpense.toFixed(2).replace('.', ', ')}`);
+    console.log(`Maior despesa cadastrada: R$${maxExpense.toFixed(2).replace('.', ',')}`);
 };
 
 maxExpenseValue();
@@ -86,7 +87,7 @@ maxExpenseValue();
 // ver resumo, 
 // limpar despesas 
 // e sair.
-let option;
+let option = 0;
 
 do {
     option = Number(prompt(`
@@ -95,8 +96,8 @@ do {
     2. Ver resumo
     3. Limpar despesas
     4. Sair
-    `));
-
+    `));    
+    
     switch (option) {
         case 1:
             // Cadastrar despesa
@@ -120,7 +121,11 @@ do {
 
         case 3:
             // Limpar despesas
-            expenses = [];
+            expenses.length = 0;
+            
+            // Resetar maxExpense para evitar que o maior valor antigo interfira em futuras chamadas de maxExpenseValue()
+            maxExpense = 0;
+
             console.log("Despesas limpas com sucesso!");
             break;
 
