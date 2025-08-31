@@ -6,7 +6,9 @@ Um aplicativo web simples para calcular e gerenciar despesas pessoais.
 
 - Adicionar, editar e excluir despesas
 - Categorizar despesas
-- Visualizar o total de despesas por categoria
+- Visualizar o total de despesas
+- Média das despesas
+- Maior despesa
 
 ## Technologies Used
 
