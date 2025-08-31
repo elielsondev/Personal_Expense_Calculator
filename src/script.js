@@ -6,12 +6,12 @@ console.log("Script loaded successfully!");
 // Requisitos:
 
 // • Permitir cadastrar uma despesa com categoria (ex.: alimentação, transporte) e valor.
-let categoria = prompt("Digite a categoria da despesa:");
-let valor = Number(prompt("Digite o valor da despesa:"));
+let category = prompt("Digite a categoria da despesa:");
+let value = Number(prompt("Digite o valor da despesa:"));
 
 // • Não permitir valores negativos.
-while (valor < 0) {
-    valor = Number(prompt("Valor inválido! Digite um valor positivo para a despesa:"));
+while (value < 0) {
+    value = Number(prompt("Valor inválido! Digite um valor positivo para a despesa:"));
 }
 
 // • Armazenar todas as despesas em uma matriz.
