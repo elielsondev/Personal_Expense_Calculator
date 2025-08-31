@@ -3,3 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ALINHAR O H1 NO CENTRO DA PÁGINA */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    color: #f0f0f0;
+}
