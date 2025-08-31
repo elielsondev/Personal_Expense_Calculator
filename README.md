@@ -2,7 +2,7 @@
 
 Um aplicativo web simples para calcular e gerenciar despesas pessoais.
 
-## Features
+## Features:
 
 - Adicionar, editar e excluir despesas
 - Categorizar despesas
@@ -10,8 +10,12 @@ Um aplicativo web simples para calcular e gerenciar despesas pessoais.
 - Média das despesas
 - Maior despesa
 
-## Technologies Used
+## Tecnologia utlizada:
 
 - HTML
 - CSS
 - JavaScript
+
+## Exibição:
+
+- Todo resultado é exibido no console
