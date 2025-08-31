@@ -27,6 +27,18 @@ expenseRegister(category, value);
 
 
 // • Lista de todas as despesas cadastradas.
+function showExpenses() {
+    console.log("Lista de todas as despesas cadastradas:");
+    for (let i = 0; i < expenses.length; i++) {
+        console.log(`${i + 1}. Categoria: ${expenses[i][0]}, Valor: R$${expenses[i][1].toFixed(2).replace('.', ',')}`);
+    };
+    // expenses.forEach((expense, index) => {
+    //     console.log(`${index + 1}. Categoria: ${expense[0]}, Valor: R$${expense[1].toFixed(2).replace('.', ',')}`);
+    // });
+};
+
+showExpenses();
+
 // • Valor total gasto.
 // • Valor médio das despesas.
 // • Maior despesa cadastrada.
