@@ -15,7 +15,17 @@ while (value < 0) {
 }
 
 // • Armazenar todas as despesas em uma matriz.
-// • Exibir no console:
+const expenses = [];
+
+function expenseRegister(category, value) {
+    expenses.push([category, value]);
+    // • Exibir no console:
+    console.log(`Despesas cadastradas: ${category} - R$${value.toFixed(2).replace('.', ',')}`);
+};
+
+expenseRegister(category, value);
+
+
 // • Lista de todas as despesas cadastradas.
 // • Valor total gasto.
 // • Valor médio das despesas.
