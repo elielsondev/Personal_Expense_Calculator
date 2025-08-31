@@ -32,7 +32,7 @@ expenseRegister(category, value);
 function showExpenses() {
     console.log("Lista de todas as despesas cadastradas:");
     
-    for (let i = 0; i < expenses.length; i++) {
+    for (let i = 0; i < expenses.length; i += 1) {
         console.log(`${i + 1}. Categoria: ${expenses[i][0]}, Valor: R$${expenses[i][1].toFixed(2).replace('.', ',')}`);
     };
 };
@@ -44,7 +44,7 @@ showExpenses();
 function totalExpenses() {
     let totalValue = 0;
 
-    for (let i = 0; i < expenses.length; i++) {
+    for (let i = 0; i < expenses.length; i += 1) {
         totalValue += expenses[i][1];
     };
 
@@ -58,7 +58,7 @@ totalExpenses();
 function averageExpense() {
     let totalValue = 0;
 
-    for (let i = 0; i < expenses.length; i++) {
+    for (let i = 0; i < expenses.length; i += 1) {
         totalValue += expenses[i][1];
     }
     let averageValue = totalValue / expenses.length;
@@ -70,7 +70,7 @@ function averageExpense() {
 // • Maior despesa cadastrada.
 let maxExpense = 0;
 function maxExpenseValue() {
-    for (let i = 0; i < expenses.length; i++) {
+    for (let i = 0; i < expenses.length; i += 1) {
         if (expenses[i][1] > maxExpense) {
             maxExpense = expenses[i][1];
         }
